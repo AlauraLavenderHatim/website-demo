@@ -45,7 +45,6 @@
       overflow-x: hidden;
     }
 
-    /* ── GRID OVERLAY ── */
     body::before {
       content: '';
       position: fixed;
@@ -79,6 +78,7 @@
       color: var(--text);
       text-decoration: none;
       letter-spacing: 0.01em;
+      cursor: pointer;
     }
 
     .nav-logo span { color: var(--accent); }
@@ -102,6 +102,7 @@
       border: 1px solid var(--border-hi);
       border-radius: var(--radius);
       transition: background 0.25s, color 0.25s;
+      cursor: pointer;
     }
 
     .nav-cta:hover {
@@ -110,8 +111,9 @@
       border-color: var(--purple);
     }
 
-    /* ── WRAPPER ── */
-    .page { position: relative; z-index: 1; }
+    /* ── PAGES ── */
+    .page { position: relative; z-index: 1; display: none; }
+    .page.active { display: block; }
 
     /* ── HERO ── */
     .hero {
@@ -161,9 +163,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .hero h1 .highlight {
-      color: var(--accent);
-    }
+    .hero h1 .highlight { color: var(--accent); }
 
     .hero-sub {
       max-width: 560px;
@@ -215,8 +215,6 @@
       color: var(--accent);
     }
 
-
-
     /* ── SECTION ── */
     .section {
       max-width: 1100px;
@@ -233,10 +231,7 @@
       margin-bottom: 0.75rem;
     }
 
-    .section-eyebrow::before {
-      content: '// ';
-      color: var(--text-3);
-    }
+    .section-eyebrow::before { content: '// '; color: var(--text-3); }
 
     .section-title {
       font-family: var(--display);
@@ -291,10 +286,7 @@
     .skill-card:hover { background: rgba(124,58,237,0.08); }
     .skill-card:hover::after { transform: scaleX(1); }
 
-    .skill-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-    }
+    .skill-icon { font-size: 1.5rem; line-height: 1; }
 
     .skill-name {
       font-family: var(--display);
@@ -320,7 +312,7 @@
       border: 1px solid rgba(124,58,237,0.2);
     }
 
-    /* ── WHAT I OFFER ── */
+    /* ── OFFERS ── */
     .offers-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -367,9 +359,7 @@
     }
 
     /* ── CONTACT ── */
-    #contact {
-      background: var(--bg-2);
-    }
+    #contact { background: var(--bg-2); }
 
     .contact-grid {
       display: grid;
@@ -378,29 +368,12 @@
       align-items: start;
     }
 
-    .contact-aside {
-      position: sticky;
-      top: 6rem;
-    }
+    .contact-aside { position: sticky; top: 6rem; }
+    .contact-aside p { font-size: 0.88rem; color: var(--text-2); line-height: 1.85; margin-bottom: 2rem; }
 
-    .contact-aside p {
-      font-size: 0.88rem;
-      color: var(--text-2);
-      line-height: 1.85;
-      margin-bottom: 2rem;
-    }
+    .contact-meta { display: flex; flex-direction: column; gap: 1rem; }
 
-    .contact-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .meta-row {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
+    .meta-row { display: flex; flex-direction: column; gap: 0.2rem; }
 
     .meta-label {
       font-size: 0.65rem;
@@ -409,29 +382,13 @@
       color: var(--text-3);
     }
 
-    .meta-value {
-      font-size: 0.88rem;
-      color: var(--accent);
-    }
+    .meta-value { font-size: 0.88rem; color: var(--accent); }
 
-    /* ── FORM ── */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
+    .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.1rem;
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
 
     .form-group label {
       font-size: 0.68rem;
@@ -465,10 +422,7 @@
       cursor: pointer;
     }
 
-    .form-group select option {
-      background: var(--bg-3);
-      color: var(--text);
-    }
+    .form-group select option { background: var(--bg-3); color: var(--text); }
 
     .form-group input:focus,
     .form-group select:focus,
@@ -480,10 +434,7 @@
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: var(--text-3); }
 
-    .form-group textarea {
-      resize: vertical;
-      min-height: 140px;
-    }
+    .form-group textarea { resize: vertical; min-height: 140px; }
 
     .form-footer {
       display: flex;
@@ -493,10 +444,7 @@
       margin-top: 0.4rem;
     }
 
-    .form-note {
-      font-size: 0.75rem;
-      color: var(--text-3);
-    }
+    .form-note { font-size: 0.75rem; color: var(--text-3); }
 
     .btn-submit {
       font-family: var(--mono);
@@ -513,15 +461,8 @@
       box-shadow: 0 0 20px rgba(139,92,246,0.28);
     }
 
-    .btn-submit:hover {
-      background: var(--purple-mid);
-      box-shadow: 0 0 32px rgba(139,92,246,0.45);
-    }
-
-    .btn-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+    .btn-submit:hover { background: var(--purple-mid); box-shadow: 0 0 32px rgba(139,92,246,0.45); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
     .form-success {
       display: none;
@@ -534,7 +475,7 @@
     }
 
     /* ── FOOTER ── */
-    footer {
+    .site-footer {
       border-top: 1px solid var(--border);
       padding: 1.75rem 3rem;
       display: flex;
@@ -542,12 +483,29 @@
       align-items: center;
       max-width: 1100px;
       margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--text-3);
+    .footer-copy { font-size: 0.75rem; color: var(--text-3); }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
+
+    .footer-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .footer-link:hover { color: var(--accent); }
 
     .footer-top {
       font-size: 0.72rem;
@@ -556,9 +514,75 @@
       color: var(--text-3);
       text-decoration: none;
       transition: color 0.2s;
+      cursor: pointer;
     }
 
     .footer-top:hover { color: var(--accent); }
+
+    /* ── LEGAL PAGES ── */
+    .legal-main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 8rem 3rem 6rem;
+    }
+
+    .legal-eyebrow {
+      display: inline-block;
+      border: 1px solid var(--border-hi);
+      border-radius: 999px;
+      padding: 0.3rem 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .legal-h1 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 3rem;
+    }
+
+    .legal-h1 span { color: var(--accent); }
+
+    .legal-section { margin-bottom: 2.5rem; }
+
+    .legal-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .legal-h2 {
+      font-family: var(--display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-main p { color: var(--text-2); margin-bottom: 0.75rem; font-size: 0.9rem; line-height: 1.85; }
+    .legal-main ul { color: var(--text-2); margin: 0 0 0.75rem 1.5rem; font-size: 0.9rem; line-height: 1.85; }
+    .legal-main ul li { margin-bottom: 0.4rem; }
+    .legal-main a { color: var(--accent); text-decoration: none; }
+    .legal-main a:hover { text-decoration: underline; }
+    .legal-main strong { color: var(--text); }
+
+    .legal-highlight {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--purple);
+      padding: 1rem 1.25rem;
+      margin: 0 0 2rem;
+      color: var(--text-2);
+      font-size: 0.88rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
 
     /* ── SCROLL FADE ── */
     .fade-up {
@@ -574,10 +598,11 @@
       .nav-tag { display: none; }
       .hero { padding: 6rem 1.5rem 3rem; }
       .section { padding: 3.5rem 1.5rem; }
-      footer { padding: 1.5rem; }
+      .site-footer { padding: 1.5rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-aside { position: static; }
       .form-row { grid-template-columns: 1fr; }
+      .legal-main { padding: 7rem 1.5rem 4rem; }
     }
   </style>
 </head>
@@ -585,307 +610,485 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">alaura<span>.</span>lavender</a>
+    <a class="nav-logo" onclick="showPage('home')">alaura<span>.</span>lavender</a>
     <span class="nav-tag">Available for work</span>
-    <a href="#contact" class="nav-cta">Hire me</a>
+    <a class="nav-cta" onclick="showPage('home'); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),50)">Hire me</a>
   </nav>
 
-  <div class="page">
+  <!-- ═══════════════════════════════════════════
+       HOME PAGE
+  ════════════════════════════════════════════ -->
+  <div class="page active" id="page-home">
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-badge fade-up">
-        <span class="badge-dot"></span>
-        DevOps &amp; Infrastructure Engineer
-      </div>
-      <h1 class="fade-up">
-        Infrastructure that ships fast,<br/>
-        scales cleanly, and <span class="highlight">stays up.</span>
-      </h1>
-      <p class="hero-sub fade-up">
-        I help teams build resilient infrastructure, automate everything that can be automated,
-        and sleep better at night knowing their systems are observable, repeatable, and production-ready.
-      </p>
-      <div class="hero-actions fade-up">
-        <a href="#contact" class="btn btn-primary">Start a conversation</a>
-        <a href="#skills" class="btn btn-ghost">View my stack</a>
-      </div>
+    <div class="page" style="display:block; position:relative; z-index:1;">
 
-
-    </div>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <p class="section-eyebrow fade-up">Stack</p>
-      <h2 class="section-title fade-up">Tools I work with</h2>
-      <p class="section-desc fade-up">
-        A battle-tested toolkit for cloud infrastructure, container orchestration, CI/CD pipelines, and full-stack observability.
-      </p>
-      <div class="skills-grid fade-up">
-        <div class="skill-card">
-          <div class="skill-icon">🐳</div>
-          <div class="skill-name">Docker</div>
-          <div class="skill-tags">
-            <span class="tag">containers</span>
-            <span class="tag">compose</span>
-            <span class="tag">images</span>
-          </div>
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          DevOps &amp; Infrastructure Engineer
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">☸️</div>
-          <div class="skill-name">Kubernetes</div>
-          <div class="skill-tags">
-            <span class="tag">EKS</span>
-            <span class="tag">Helm</span>
-            <span class="tag">autoscaling</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">⚙️</div>
-          <div class="skill-name">CI / CD</div>
-          <div class="skill-tags">
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">GitLab CI</span>
-            <span class="tag">Jenkins</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">☁️</div>
-          <div class="skill-name">AWS</div>
-          <div class="skill-tags">
-            <span class="tag">EC2</span>
-            <span class="tag">Lambda</span>
-            <span class="tag">RDS</span>
-            <span class="tag">IAM</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🏗️</div>
-          <div class="skill-name">Terraform</div>
-          <div class="skill-tags">
-            <span class="tag">IaC</span>
-            <span class="tag">modules</span>
-            <span class="tag">state</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">📦</div>
-          <div class="skill-name">Ansible</div>
-          <div class="skill-tags">
-            <span class="tag">provisioning</span>
-            <span class="tag">playbooks</span>
-            <span class="tag">roles</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">📊</div>
-          <div class="skill-name">Grafana</div>
-          <div class="skill-tags">
-            <span class="tag">dashboards</span>
-            <span class="tag">alerting</span>
-            <span class="tag">Loki</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🔥</div>
-          <div class="skill-name">Prometheus</div>
-          <div class="skill-tags">
-            <span class="tag">metrics</span>
-            <span class="tag">PromQL</span>
-            <span class="tag">exporters</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🐍</div>
-          <div class="skill-name">Python</div>
-          <div class="skill-tags">
-            <span class="tag">automation</span>
-            <span class="tag">scripts</span>
-            <span class="tag">tooling</span>
-          </div>
+        <h1 class="fade-up">
+          Infrastructure that ships fast,<br/>
+          scales cleanly, and <span class="highlight">stays up.</span>
+        </h1>
+        <p class="hero-sub fade-up">
+          I help teams build resilient infrastructure, automate everything that can be automated,
+          and sleep better at night knowing their systems are observable, repeatable, and production-ready.
+        </p>
+        <div class="hero-actions fade-up">
+          <a class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a conversation</a>
+          <a class="btn btn-ghost" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">View my stack</a>
         </div>
       </div>
-    </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services">
-      <p class="section-eyebrow fade-up">Services</p>
-      <h2 class="section-title fade-up">What I can do for you</h2>
-      <p class="section-desc fade-up">Whether you need a full infrastructure build-out or targeted help with a specific pain point, I bring the same rigour to every engagement.</p>
-      <div class="offers-grid">
-        <div class="offer-card fade-up">
-          <div class="offer-num">01</div>
-          <div class="offer-title">Infrastructure as Code</div>
-          <p class="offer-desc">Design and implement repeatable, version-controlled cloud infrastructure on AWS using Terraform and Ansible — from VPCs to fully managed services.</p>
+      <!-- SKILLS -->
+      <section class="section" id="skills">
+        <p class="section-eyebrow fade-up">Stack</p>
+        <h2 class="section-title fade-up">Tools I work with</h2>
+        <p class="section-desc fade-up">A battle-tested toolkit for cloud infrastructure, container orchestration, CI/CD pipelines, and full-stack observability.</p>
+        <div class="skills-grid fade-up">
+          <div class="skill-card"><div class="skill-icon">🐳</div><div class="skill-name">Docker</div><div class="skill-tags"><span class="tag">containers</span><span class="tag">compose</span><span class="tag">images</span></div></div>
+          <div class="skill-card"><div class="skill-icon">☸️</div><div class="skill-name">Kubernetes</div><div class="skill-tags"><span class="tag">EKS</span><span class="tag">Helm</span><span class="tag">autoscaling</span></div></div>
+          <div class="skill-card"><div class="skill-icon">⚙️</div><div class="skill-name">CI / CD</div><div class="skill-tags"><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Jenkins</span></div></div>
+          <div class="skill-card"><div class="skill-icon">☁️</div><div class="skill-name">AWS</div><div class="skill-tags"><span class="tag">EC2</span><span class="tag">Lambda</span><span class="tag">RDS</span><span class="tag">IAM</span></div></div>
+          <div class="skill-card"><div class="skill-icon">🏗️</div><div class="skill-name">Terraform</div><div class="skill-tags"><span class="tag">IaC</span><span class="tag">modules</span><span class="tag">state</span></div></div>
+          <div class="skill-card"><div class="skill-icon">📦</div><div class="skill-name">Ansible</div><div class="skill-tags"><span class="tag">provisioning</span><span class="tag">playbooks</span><span class="tag">roles</span></div></div>
+          <div class="skill-card"><div class="skill-icon">📊</div><div class="skill-name">Grafana</div><div class="skill-tags"><span class="tag">dashboards</span><span class="tag">alerting</span><span class="tag">Loki</span></div></div>
+          <div class="skill-card"><div class="skill-icon">🔥</div><div class="skill-name">Prometheus</div><div class="skill-tags"><span class="tag">metrics</span><span class="tag">PromQL</span><span class="tag">exporters</span></div></div>
+          <div class="skill-card"><div class="skill-icon">🐍</div><div class="skill-name">Python</div><div class="skill-tags"><span class="tag">automation</span><span class="tag">scripts</span><span class="tag">tooling</span></div></div>
         </div>
-        <div class="offer-card fade-up">
-          <div class="offer-num">02</div>
-          <div class="offer-title">Container &amp; K8s Platforms</div>
-          <p class="offer-desc">Containerise your workloads, set up Kubernetes clusters, configure Helm charts, and establish sane autoscaling and rolling-deployment strategies.</p>
-        </div>
-        <div class="offer-card fade-up">
-          <div class="offer-num">03</div>
-          <div class="offer-title">CI/CD Pipeline Design</div>
-          <p class="offer-desc">Build fast, reliable pipelines that test, build, and ship your code automatically — with environments, gates, and rollback baked in from day one.</p>
-        </div>
-        <div class="offer-card fade-up">
-          <div class="offer-num">04</div>
-          <div class="offer-title">Observability &amp; Alerting</div>
-          <p class="offer-desc">Stand up Prometheus + Grafana stacks, instrument your services, and build dashboards and alert rules that surface real signals — not noise.</p>
-        </div>
-        <div class="offer-card fade-up">
-          <div class="offer-num">05</div>
-          <div class="offer-title">Automation &amp; Tooling</div>
-          <p class="offer-desc">Custom Python automation for routine ops tasks: cost reports, incident runbooks, resource audits, Slack bots, and anything else eating your team's time.</p>
-        </div>
-        <div class="offer-card fade-up">
-          <div class="offer-num">06</div>
-          <div class="offer-title">Consulting &amp; Review</div>
-          <p class="offer-desc">Architecture reviews, cost optimisation audits, security posture checks, or simply a second pair of eyes on a complex migration — I can help.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="contact-grid">
-        <div class="contact-aside">
-          <p class="section-eyebrow fade-up">Contact</p>
-          <h2 class="section-title fade-up">Let's build<br/>something solid.</h2>
-          <p class="fade-up" style="color: var(--text-2); font-size: 0.88rem; line-height: 1.85; margin-bottom: 2rem;">
-            Got a project, a problem, or just want to explore what's possible?
-            Fill in the form and I'll get back to you within one business day.
-          </p>
-          <div class="contact-meta fade-up">
-            <div class="meta-row">
-              <span class="meta-label">Email</span>
-              <span class="meta-value">contact@alauralavender.com</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Location</span>
-              <span class="meta-value">Remote — worldwide</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Availability</span>
-              <span class="meta-value">Open to new contracts</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Response time</span>
-              <span class="meta-value">&lt; 1 business day</span>
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <p class="section-eyebrow fade-up">Services</p>
+        <h2 class="section-title fade-up">What I can do for you</h2>
+        <p class="section-desc fade-up">Whether you need a full infrastructure build-out or targeted help with a specific pain point, I bring the same rigour to every engagement.</p>
+        <div class="offers-grid">
+          <div class="offer-card fade-up"><div class="offer-num">01</div><div class="offer-title">Infrastructure as Code</div><p class="offer-desc">Design and implement repeatable, version-controlled cloud infrastructure on AWS using Terraform and Ansible — from VPCs to fully managed services.</p></div>
+          <div class="offer-card fade-up"><div class="offer-num">02</div><div class="offer-title">Container &amp; K8s Platforms</div><p class="offer-desc">Containerise your workloads, set up Kubernetes clusters, configure Helm charts, and establish sane autoscaling and rolling-deployment strategies.</p></div>
+          <div class="offer-card fade-up"><div class="offer-num">03</div><div class="offer-title">CI/CD Pipeline Design</div><p class="offer-desc">Build fast, reliable pipelines that test, build, and ship your code automatically — with environments, gates, and rollback baked in from day one.</p></div>
+          <div class="offer-card fade-up"><div class="offer-num">04</div><div class="offer-title">Observability &amp; Alerting</div><p class="offer-desc">Stand up Prometheus + Grafana stacks, instrument your services, and build dashboards and alert rules that surface real signals — not noise.</p></div>
+          <div class="offer-card fade-up"><div class="offer-num">05</div><div class="offer-title">Automation &amp; Tooling</div><p class="offer-desc">Custom Python automation for routine ops tasks: cost reports, incident runbooks, resource audits, Slack bots, and anything else eating your team's time.</p></div>
+          <div class="offer-card fade-up"><div class="offer-num">06</div><div class="offer-title">Consulting &amp; Review</div><p class="offer-desc">Architecture reviews, cost optimisation audits, security posture checks, or simply a second pair of eyes on a complex migration — I can help.</p></div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="contact-grid">
+          <div class="contact-aside">
+            <p class="section-eyebrow fade-up">Contact</p>
+            <h2 class="section-title fade-up">Let's build<br/>something solid.</h2>
+            <p class="fade-up" style="color: var(--text-2); font-size: 0.88rem; line-height: 1.85; margin-bottom: 2rem;">
+              Got a project, a problem, or just want to explore what's possible?
+              Fill in the form and I'll get back to you within one business day.
+            </p>
+            <div class="contact-meta fade-up">
+              <div class="meta-row"><span class="meta-label">Email</span><span class="meta-value">contact@alauralavender.com</span></div>
+              <div class="meta-row"><span class="meta-label">Location</span><span class="meta-value">Remote — worldwide</span></div>
+              <div class="meta-row"><span class="meta-label">Availability</span><span class="meta-value">Open to new contracts</span></div>
+              <div class="meta-row"><span class="meta-label">Response time</span><span class="meta-value">&lt; 1 business day</span></div>
             </div>
           </div>
-        </div>
-
-        <div class="fade-up">
-          
-          <form
-            class="contact-form"
-            id="contactForm"
-            action="https://formspree.io/f/xkoekwoy"
-            method="POST"
-          >
-            <div class="form-row">
+          <div class="fade-up">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkoekwoy" method="POST">
+              <div class="form-row">
+                <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Alex Johnson" required /></div>
+                <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="alex@company.io" required /></div>
+              </div>
+              <div class="form-group"><label for="company">Company / Project</label><input type="text" id="company" name="company" placeholder="Acme Corp (optional)" /></div>
               <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Alex Johnson" required />
+                <label for="service">What do you need?</label>
+                <select id="service" name="service">
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="iac">Infrastructure as Code (Terraform / Ansible)</option>
+                  <option value="k8s">Container &amp; Kubernetes Platform</option>
+                  <option value="cicd">CI/CD Pipeline Design</option>
+                  <option value="observability">Observability &amp; Alerting</option>
+                  <option value="automation">Automation &amp; Python Tooling</option>
+                  <option value="consulting">Consulting / Architecture Review</option>
+                  <option value="other">Something else</option>
+                </select>
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="alex@company.io" required />
+                <label for="budget">Budget range</label>
+                <select id="budget" name="budget">
+                  <option value="" disabled selected>Select a range</option>
+                  <option value="small">Under €1,000</option>
+                  <option value="mid">€1,000 – €5,000</option>
+                  <option value="large">€5,000 – €15,000</option>
+                  <option value="xlarge">€15,000+</option>
+                  <option value="ongoing">Ongoing / retainer</option>
+                </select>
               </div>
-            </div>
-
-            <div class="form-group">
-              <label for="company">Company / Project</label>
-              <input type="text" id="company" name="company" placeholder="Acme Corp (optional)" />
-            </div>
-
-            <div class="form-group">
-              <label for="service">What do you need?</label>
-              <select id="service" name="service">
-                <option value="" disabled selected>Select a service</option>
-                <option value="iac">Infrastructure as Code (Terraform / Ansible)</option>
-                <option value="k8s">Container &amp; Kubernetes Platform</option>
-                <option value="cicd">CI/CD Pipeline Design</option>
-                <option value="observability">Observability &amp; Alerting</option>
-                <option value="automation">Automation &amp; Python Tooling</option>
-                <option value="consulting">Consulting / Architecture Review</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="budget">Budget range</label>
-              <select id="budget" name="budget">
-                <option value="" disabled selected>Select a range</option>
-                <option value="small">Under €1,000</option>
-                <option value="mid">€1,000 – €5,000</option>
-                <option value="large">€5,000 – €15,000</option>
-                <option value="xlarge">€15,000+</option>
-                <option value="ongoing">Ongoing / retainer</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Tell me about the project</label>
-              <textarea id="message" name="message" placeholder="What's the current setup? What's broken or missing? What does a win look like?" required></textarea>
-            </div>
-
-            <!-- Honeypot anti-spam -->
-            <input type="text" name="_gotcha" style="display:none" />
-
-            <div class="form-footer">
-              <span class="form-note">No sales pitches. Just a real conversation.</span>
-              <button type="submit" class="btn-submit" id="submitBtn">Send message</button>
-            </div>
-
-            <div class="form-success" id="formSuccess">
-              ✓ &nbsp; Message sent — I'll be in touch shortly.
-            </div>
-          </form>
+              <div class="form-group"><label for="message">Tell me about the project</label><textarea id="message" name="message" placeholder="What's the current setup? What's broken or missing? What does a win look like?" required></textarea></div>
+              <input type="text" name="_gotcha" style="display:none" />
+              <div class="form-footer">
+                <span class="form-note">No sales pitches. Just a real conversation.</span>
+                <button type="submit" class="btn-submit" id="submitBtn">Send message</button>
+              </div>
+              <div class="form-success" id="formSuccess">✓ &nbsp; Message sent — I'll be in touch shortly.</div>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div><!-- /inner page -->
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="site-footer">
       <span class="footer-copy">&copy; 2026 Alaura Lavender. Built with care.</span>
-      <a href="#" class="footer-top">↑ Back to top</a>
+      <div class="footer-links">
+        <a class="footer-link" onclick="showPage('mentions-legales')">Mentions légales</a>
+        <a class="footer-link" onclick="showPage('cgv')">CGV</a>
+        <a class="footer-link" onclick="showPage('confidentialite')">Confidentialité &amp; Cookies</a>
+      </div>
+      <a class="footer-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</a>
     </footer>
 
-  </div><!-- /page -->
+  </div><!-- /page-home -->
+
+
+  <!-- ═══════════════════════════════════════════
+       MENTIONS LÉGALES
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-mentions-legales">
+    <main class="legal-main">
+      <div class="legal-eyebrow">· Légal</div>
+      <h1 class="legal-h1">Mentions <span>légales.</span></h1>
+
+      <div class="legal-section">
+        <div class="legal-h2">Éditeur du site</div>
+        <hr class="legal-divider">
+        <p>Alaura Hatim — Entrepreneur individuel (micro-entreprise)</p>
+        <p>SIREN : 104 867 742</p>
+        <p>44 Ave Philippe Solari A3<br>13090 Aix-en-Provence, France</p>
+        <p>Email : <a href="mailto:contact@alauralavender.com">contact@alauralavender.com</a></p>
+        <p>Téléphone : disponible sur demande à <a href="mailto:contact@alauralavender.com">contact@alauralavender.com</a></p>
+        <p>Site web : <a href="https://www.alauralavender.com">www.alauralavender.com</a></p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Directeur de la publication</div>
+        <hr class="legal-divider">
+        <p>Alaura Hatim — <a href="mailto:contact@alauralavender.com">contact@alauralavender.com</a></p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Hébergement</div>
+        <hr class="legal-divider">
+        <p>GitHub, Inc.<br>
+        88 Colin P Kelly Jr Street<br>
+        San Francisco, CA 94107, États-Unis<br>
+        Site web : <a href="https://pages.github.com" target="_blank" rel="noopener">pages.github.com</a></p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Propriété intellectuelle</div>
+        <hr class="legal-divider">
+        <p>L'ensemble du contenu de ce site (textes, visuels, structure) est la propriété exclusive d'Alaura Hatim, sauf mention contraire. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Responsabilité</div>
+        <hr class="legal-divider">
+        <p>Les informations publiées sur ce site sont fournies à titre indicatif. Alaura Hatim ne saurait être tenue responsable des erreurs ou omissions, ni de l'utilisation qui pourrait en être faite.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Données personnelles</div>
+        <hr class="legal-divider">
+        <p>Pour toute information relative au traitement de vos données personnelles, veuillez consulter notre <a onclick="showPage('confidentialite')" style="cursor:pointer">politique de confidentialité et cookies</a>.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Droit applicable</div>
+        <hr class="legal-divider">
+        <p>Le présent site est soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-copy">&copy; 2026 Alaura Lavender. Tous droits réservés.</span>
+      <div class="footer-links">
+        <a class="footer-link" onclick="showPage('home')">← Retour au site</a>
+        <a class="footer-link" onclick="showPage('cgv')">CGV</a>
+        <a class="footer-link" onclick="showPage('confidentialite')">Confidentialité &amp; Cookies</a>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       CGV
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-cgv">
+    <main class="legal-main">
+      <div class="legal-eyebrow">· Légal</div>
+      <h1 class="legal-h1">Conditions générales <span>de vente.</span></h1>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 1 — Objet</div>
+        <hr class="legal-divider">
+        <p>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre Alaura Hatim, entrepreneur individuel (micro-entreprise, SIREN : 104 867 742), ci-après dénommée « le Prestataire », et tout client professionnel ou particulier souhaitant bénéficier de ses services en ingénierie DevOps et infrastructure.</p>
+        <p>Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 2 — Services proposés</div>
+        <hr class="legal-divider">
+        <p>Le Prestataire propose des services de conseil, de mise en œuvre et d'accompagnement en ingénierie DevOps et infrastructure, notamment : conception et déploiement d'infrastructure, automatisation, observabilité, et conseil technique.</p>
+        <p>Chaque mission fait l'objet d'un devis personnalisé, accepté par le client avant tout commencement de prestation.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 3 — Tarifs</div>
+        <hr class="legal-divider">
+        <p>Les tarifs sont communiqués sur devis. Ils sont exprimés en euros hors taxes (HT). En tant que micro-entreprise bénéficiant de la franchise en base de TVA (article 293 B du CGI), la TVA n'est pas applicable.</p>
+        <p>Le Prestataire se réserve le droit de modifier ses tarifs à tout moment. Les prestations sont facturées sur la base du tarif en vigueur au moment de l'acceptation du devis.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 4 — Commande et devis</div>
+        <hr class="legal-divider">
+        <p>Toute mission débute par l'envoi d'un devis par le Prestataire. La commande est réputée ferme et définitive à réception du devis signé par le client, accompagné du versement de l'acompte éventuel prévu.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 5 — Modalités de paiement</div>
+        <hr class="legal-divider">
+        <p>Les factures sont payables dans un délai de 30 jours à compter de leur date d'émission, par virement bancaire ou tout autre moyen convenu entre les parties.</p>
+        <p>En cas de retard de paiement, des pénalités de retard seront appliquées au taux légal en vigueur, ainsi qu'une indemnité forfaitaire pour frais de recouvrement de 40 €, conformément à la loi.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 6 — Obligations des parties</div>
+        <hr class="legal-divider">
+        <p><strong>Le Prestataire</strong> s'engage à réaliser les missions avec soin et professionnalisme, dans les délais convenus, et à informer le client de toute difficulté susceptible d'affecter la bonne exécution de la prestation.</p>
+        <p><strong>Le Client</strong> s'engage à fournir en temps utile tous les éléments nécessaires à la réalisation de la mission et à régler les sommes dues aux échéances convenues.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 7 — Propriété intellectuelle</div>
+        <hr class="legal-divider">
+        <p>Les livrables produits dans le cadre de la mission sont cédés au client à compter du paiement intégral de la facture correspondante. Le Prestataire conserve le droit de mentionner la mission dans ses références, sauf accord contraire explicite du client.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 8 — Confidentialité</div>
+        <hr class="legal-divider">
+        <p>Le Prestataire s'engage à garder confidentielles toutes les informations transmises par le client dans le cadre de la mission, et ce pendant toute la durée de la relation contractuelle et au-delà.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 9 — Responsabilité</div>
+        <hr class="legal-divider">
+        <p>La responsabilité du Prestataire est limitée au montant des sommes effectivement perçues au titre de la mission concernée. Le Prestataire ne saurait être tenu responsable de tout dommage indirect, perte d'exploitation ou préjudice consécutif.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 10 — Résiliation</div>
+        <hr class="legal-divider">
+        <p>Chaque partie peut mettre fin à la mission en respectant un préavis de 15 jours calendaires, notifié par écrit. Les prestations réalisées jusqu'à la date de résiliation restent dues.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 11 — Droit applicable et litiges</div>
+        <hr class="legal-divider">
+        <p>Les présentes CGV sont soumises au droit français. En cas de litige, les parties s'efforceront de trouver une solution amiable. À défaut, les tribunaux compétents du ressort d'Aix-en-Provence seront saisis.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Mise à jour</div>
+        <hr class="legal-divider">
+        <p>CGV mises à jour le 15 juin 2025.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-copy">&copy; 2026 Alaura Lavender. Tous droits réservés.</span>
+      <div class="footer-links">
+        <a class="footer-link" onclick="showPage('home')">← Retour au site</a>
+        <a class="footer-link" onclick="showPage('mentions-legales')">Mentions légales</a>
+        <a class="footer-link" onclick="showPage('confidentialite')">Confidentialité &amp; Cookies</a>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONFIDENTIALITÉ & COOKIES
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-confidentialite">
+    <main class="legal-main">
+      <div class="legal-eyebrow">· Légal</div>
+      <h1 class="legal-h1">Confidentialité <span>&amp; cookies.</span></h1>
+
+      <div class="legal-highlight">
+        Ce site respecte votre vie privée. Nous ne collectons que les données strictement nécessaires et ne les revendons jamais à des tiers.
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 1 — Responsable du traitement</div>
+        <hr class="legal-divider">
+        <p>Alaura Hatim — Entrepreneur individuel (micro-entreprise, SIREN : 104 867 742)<br>
+        44 Ave Philippe Solari A3, 13090 Aix-en-Provence, France<br>
+        Email : <a href="mailto:contact@alauralavender.com">contact@alauralavender.com</a></p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 2 — Données collectées</div>
+        <hr class="legal-divider">
+        <p>Dans le cadre de l'utilisation de ce site et des prises de contact, les données suivantes peuvent être collectées :</p>
+        <ul>
+          <li>Nom et prénom</li>
+          <li>Adresse email</li>
+          <li>Contenu de votre message</li>
+          <li>Données de navigation (adresse IP, pages visitées, durée de visite)</li>
+        </ul>
+        <p>Ces données sont collectées uniquement lorsque vous remplissez le formulaire de contact ou nous écrivez directement.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 3 — Finalités du traitement</div>
+        <hr class="legal-divider">
+        <p>Vos données sont utilisées pour :</p>
+        <ul>
+          <li>Répondre à vos demandes de contact ou de devis</li>
+          <li>Gérer la relation commerciale</li>
+          <li>Améliorer le fonctionnement du site (données de navigation anonymisées)</li>
+        </ul>
+        <p>Elles ne sont en aucun cas utilisées à des fins publicitaires ou revendues à des tiers.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 4 — Base légale</div>
+        <hr class="legal-divider">
+        <p>Le traitement de vos données repose sur :</p>
+        <ul>
+          <li>Votre consentement (formulaire de contact)</li>
+          <li>L'exécution d'un contrat ou de mesures précontractuelles (devis, missions)</li>
+          <li>L'intérêt légitime du Prestataire (amélioration du site)</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 5 — Durée de conservation</div>
+        <hr class="legal-divider">
+        <p>Vos données sont conservées :</p>
+        <ul>
+          <li>Données de contact et de devis : 3 ans à compter du dernier contact</li>
+          <li>Données de facturation : 10 ans (obligation légale)</li>
+          <li>Données de navigation : 13 mois maximum</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 6 — Vos droits</div>
+        <hr class="legal-divider">
+        <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants :</p>
+        <ul>
+          <li>Droit d'accès à vos données</li>
+          <li>Droit de rectification</li>
+          <li>Droit à l'effacement (« droit à l'oubli »)</li>
+          <li>Droit à la limitation du traitement</li>
+          <li>Droit à la portabilité</li>
+          <li>Droit d'opposition</li>
+        </ul>
+        <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@alauralavender.com">contact@alauralavender.com</a></p>
+        <p>Vous pouvez également introduire une réclamation auprès de la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 7 — Cookies</div>
+        <hr class="legal-divider">
+        <p>Un cookie est un petit fichier texte déposé sur votre terminal lors de la visite d'un site. Ce site peut utiliser les types de cookies suivants :</p>
+        <p><strong>Cookies techniques (essentiels)</strong><br>Nécessaires au fonctionnement du site. Ils ne nécessitent pas votre consentement.</p>
+        <p><strong>Cookies analytiques</strong><br>Utilisés pour mesurer l'audience du site de manière anonymisée. Ces cookies sont déposés uniquement avec votre consentement.</p>
+        <p><strong>Cookies tiers</strong><br>Ce site ne dépose pas de cookies publicitaires ou de pistage tiers.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 8 — Gestion des cookies</div>
+        <hr class="legal-divider">
+        <p>Vous pouvez à tout moment modifier vos préférences depuis les paramètres de votre navigateur :</p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/fr/kb/effacer-les-cookies" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+          <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Article 9 — Sécurité</div>
+        <hr class="legal-divider">
+        <p>Des mesures techniques et organisationnelles appropriées sont mises en œuvre pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-h2">Mise à jour</div>
+        <hr class="legal-divider">
+        <p>Politique mise à jour le 15 juin 2025.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-copy">&copy; 2026 Alaura Lavender. Tous droits réservés.</span>
+      <div class="footer-links">
+        <a class="footer-link" onclick="showPage('home')">← Retour au site</a>
+        <a class="footer-link" onclick="showPage('mentions-legales')">Mentions légales</a>
+        <a class="footer-link" onclick="showPage('cgv')">CGV</a>
+      </div>
+    </footer>
+  </div>
+
 
   <script>
-    /* Scroll fade-in */
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+    /* ── PAGE ROUTER ── */
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + name).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      initFadeUps();
+    }
 
-    /* Stagger children inside grids */
-    document.querySelectorAll('.skills-grid, .offers-grid').forEach(grid => {
-      grid.querySelectorAll('.skill-card, .offer-card').forEach((card, i) => {
-        card.style.transitionDelay = (i * 0.06) + 's';
-        card.classList.add('fade-up');
-        obs.observe(card);
-      });
-    });
+    /* ── SCROLL FADE ── */
+    function initFadeUps() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
 
-    /* Formspree AJAX */
-    const form = document.getElementById('contactForm');
-    const btn  = document.getElementById('submitBtn');
+      document.querySelectorAll('.page.active .fade-up').forEach(el => {
+        el.classList.remove('visible');
+        obs.observe(el);
+      });
+
+      document.querySelectorAll('.page.active .skills-grid, .page.active .offers-grid').forEach(grid => {
+        grid.querySelectorAll('.skill-card, .offer-card').forEach((card, i) => {
+          card.style.transitionDelay = (i * 0.06) + 's';
+          card.classList.add('fade-up');
+          obs.observe(card);
+        });
+      });
+    }
+
+    /* ── FORMSPREE AJAX ── */
+    const form    = document.getElementById('contactForm');
+    const btn     = document.getElementById('submitBtn');
     const success = document.getElementById('formSuccess');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       btn.textContent = 'Sending…';
       btn.disabled = true;
-
       try {
         const res = await fetch(form.action, {
           method: 'POST',
@@ -905,6 +1108,10 @@
         btn.disabled = false;
       }
     });
+
+    /* ── INIT ── */
+    initFadeUps();
   </script>
+
 </body>
 </html>
